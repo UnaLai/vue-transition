@@ -1,18 +1,43 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <button @click="isOpen = !isOpen">Control</button>
+    <div class="container" v-if="isOpen">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, ea.
+        Adipisci dignissimos repellat eaque dolor provident incidunt, cumque
+        aperiam quod repudiandae, tempora ea nobis laboriosam quis totam
+        quibusdam in enim!
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
   name: "Home",
-  components: {
-    HelloWorld
+  data() {
+    return {
+      isOpen: false
+    };
   }
 };
 </script>
+<style lang="scss" scoped>
+button {
+  background-color: white;
+  border: 2px solid #005fcc;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 300ms;
+  &:hover {
+    background-color: #005fcc;
+    color: #fff;
+  }
+}
+.container {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  margin: 0 auto;
+}
+</style>
